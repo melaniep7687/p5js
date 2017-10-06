@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        function setup() {
+
+        }
+
+
+        function draw() {
+            createCanvas(600, 800);
+            background(90);
+
+            //head 
+            stroke(10);
+            strokeWeight(2);
+            fill(232, 135, 25); //orange 
+            ellipseMode(CORNER);
+            ellipse(200, 100, 150, 150);
+            
+
+
+            //face
+            fill(237, 199, 33); //yellow
+            rect(235, 200, 85, 30); //mouth
+            ellipse(235, 135, 30, 30); //yellow part in eyes
+            ellipse(290, 135, 30, 30);
+            fill(10);
+            textSize(50);
+            text("O O", 230, 170); //eyes
+            textSize(40);
+            text(">", 270, 190);  //nose
+            strokeWeight(15);
+            stroke(10);
+            point(245, 160);  //black part in the eyes
+            point(300, 160);
+            strokeWeight(1);
+
+
+            //arms and legs 
+            stroke(255);
+            strokeWeight(5);
+            //arms
+            line(225, 300, 140, 220);
+            line(325, 300, 390, 220);
+            //legs
+            line(235, 400, 235, 570);
+            line(310, 400, 310, 570);
+
+
+            //body
+            stroke(10);
+            fill(10);
+            rect(225, 250, 100, 200);
+            //purple
+            stroke(111, 37, 196);
+            fill(111, 37, 196);
+            rect(225, 250, 100, 40);
+            //green
+            fill(37, 163, 75);
+            stroke(37, 163, 75);
+            rect(225, 290, 100, 20);
+            //black lines
+            stroke(10);
+            line(225, 290, 325, 290);
+            line(225, 250, 275, 290);
+            line(325, 250, 275, 290);
+            //gray lines
+            stroke(90);
+            line(230, 315, 230, 500);
+            line(250, 315, 250, 500);
+            line(275, 315, 275, 500);
+            line(300, 315, 300, 500);
+            line(320, 315, 320, 500);
+
+
+
+
+            //hands and feet
+            stroke(10);
+            fill(10);
+            //hands 
+            ellipse(130, 220, 20, 20);
+            ellipse(380, 220, 20, 20);
+            //feet
+            ellipse(195, 570, 50, 20);
+            ellipse(300, 570, 50, 20);
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/melaniep7687/p5js/blob/master/Zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
