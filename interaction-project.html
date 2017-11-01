@@ -8,7 +8,9 @@
     <script>
         function setup() {
             createCanvas(600, 600);
+            //makes the background blue,purple,pink, white
             background(mouseX / 2, mouseY / 2, mouseX + mouseY);
+            //setting the diameters for the ellipse
             diameter3 = 20
             diameter4 = 40
             diameter5 = 60
@@ -20,6 +22,7 @@
         }
 
         function keyPressed() {
+            //makes another ellipse appear and gradually get bigger when a key is pressed 
             if (diameter3 === 20) {
                 diameter3 = diameter3--;
             }else {
@@ -28,6 +31,7 @@
         }
 
         function mousePressed() {
+            //when the mouse is pressed 2 ellipses appear wherever the mouse is and the inside is either blue, purple, pink, white
             fill(mouseX / 2, mouseY / 2, mouseX + mouseY);
             stroke(200, 0, 200);
             strokeWeight(5);
@@ -37,7 +41,7 @@
         }
 
         function mouseMoved() {
-            
+            //when the mouse is moved 3 ellipses appear and move wherever the mosue is the inside is changes to blue, purple, pink, white 
             fill(mouseX / 2, mouseY / 2, mouseX + mouseY, 5);
             stroke(200, 0, 200);
             strokeWeight(5);
