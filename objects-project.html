@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        var circle = [];
+        var score = 0;
+
+
+        function setup() {
+            createCanvas(500, 500);
+
+        }
+
+        function draw() {
+            background("white"); //
+            textSize(30); // The size of the Timer and Score
+            fill("Black"); // The color of the Timer and Score 
+            text("Timer: " + Math.floor(frameCount / 60), 15, 50); // Location of the "timer", and frameCount is used to start the timer
+            text("Score:", 15, 100); // Location of the "score" on the canvas
+            text(score, 110, 100);
+            for (var i = 0; i < circle.length; i++) { // The movement of the circles 
+                circle[i].move();
+                circle[i].display();
+            }
+            if (Math.floor(frameCount / 60) > 60) { // Calculates that the 60 seconds have been up 
+                background("Blue"); 
+                fill("Black"); // Color of the text at the end of the game
+                textSize(30); // Size of the text at the end of the game 
+                text("GAME OVER! Your score was " + score + " !", 5, 200); // After 60 seconds, the game will show your final score and "Game Over" text
+                noLoop(); // Stops the game after 60 seconds 
+            }
+
+
+        }
+
+        function Circle() {
+            this.x = random(width); // RandomX location of the circle
+            this.y = random(height); // Random Y location of the circle 
+
+            this.move = function() {
+                this.x += random(-1, 1); //Continusly resets the random of X location
+                this.y += random(-2, 0); //Continusly resets the random of Y location 
+            }
+
+            this.display = function() {   //displays the circle(s)
+                strokeWeight(5); // Outline of the circle 
+                fill(random(255), random(255), random(255));
+                ellipse(this.x, this.y, 50, 50); // random x and y postion but always the same size 
+            }
+        }
+
+        function mousePressed() {
+            circle.push(new Circle()); // Each time the mouse is clicked, a new circle is generated 
+            score = score + 1 // Each time a circle is generated, the score will increase by 1 for every circle that has been generated
+
+        }
+
+
+        function keyPressed() {
+            if (keyCode === 32) { // Space Bar Key 
+                circle.push(new Circle()); // Generates a new circle when the key is pressed
+                score = score + 1 // Score will increase each time a new circle is generated 
+            }
+            if (keyCode === 49) { // "1" key will makes the text and circles red 
+                fill("Red"); 
+                stroke("Red");
+            }
+            else if (keyCode === 50) { // "2" key will makes the text and circles green
+                fill("Green");
+                stroke("Green");
+            }
+            else if (keyCode === 51) {  // "3' key will makes the text and circles blue
+                fill("Blue");
+                stroke("Blue");
+            }
+            else if (keyCode === 52) {  // "4" key will makes the text and circles orange  
+                fill("Orange");
+                stroke("Orange");
+            }
+            else if (keyCode === 53) {  // "5" key will makes the text and circles yellow 
+                fill("Yellow");
+                stroke("Yellow");
+            }
+            else if (keyCode === 54) {  // "6" key will makes the text and circles black 
+                fill("Black");
+                stroke("Black");
+            }
+          
+        }
+    </script>
+</head>
+
+<body>
+<form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/melaniep7687/p5js/blob/master/objects-project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
